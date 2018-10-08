@@ -33,7 +33,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;__CONSTRAINED__ UNITY UNITY_IOS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -45,7 +45,7 @@
     </DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;__CONSTRAINED__</DefineConstants>
+    <DefineConstants>TRACE;__CONSTRAINED__ UNITY UNITY_IOS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -57,6 +57,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\UnityEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encryption\NetAESEncryption.cs">
@@ -71,6 +74,7 @@
     <Compile Include="Encryption\NetRC2Encryption.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Encryption\NetTokenizedTripleDesEncryption.cs" />
     <Compile Include="Encryption\NetTripleDESEncryption.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,6 +97,7 @@
     <Compile Include="NetConnection.Handshake.cs" />
     <Compile Include="NetConnection.Latency.cs" />
     <Compile Include="NetConnection.MTU.cs" />
+    <Compile Include="NetConnectionResult.cs" />
     <Compile Include="NetConnectionStatistics.cs" />
     <Compile Include="NetConnectionStatus.cs" />
     <Compile Include="NetConstants.cs" />
